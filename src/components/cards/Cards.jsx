@@ -2,7 +2,6 @@ import Card from "../card/Card";
 import styled from "./Cards.module.css"
 export default function Cards({ characters }) {
   // props -> { characters} undefined
-
   return (
     <div className={styled.container}>
       {characters?.map(
