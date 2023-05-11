@@ -1,11 +1,11 @@
-import Card from "./Card";
-
+import Card from "../card/Card";
+import styled from "./Cards.module.css"
 export default function Cards({ characters }) {
-  // props -> { characters}
+  // props -> { characters} undefined
 
   return (
-    <div>
-      {characters.map(
+    <div className={styled.container}>
+      {characters?.map(
         ({id, name, species, status, gender, origin, image }) => (
           <Card
             key={id}
