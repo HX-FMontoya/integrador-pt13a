@@ -1,5 +1,6 @@
 import styled from "./Card.module.css";
 export default function Card({
+  id,
   name,
   species,
   status,
@@ -12,7 +13,7 @@ export default function Card({
   return (
     <div className={styled.container}>
       <div className={styled.buttonContainer}>
-        <button onClick={() => onClose()} className={styled.button}>
+        <button onClick={() => onClose(id)} className={styled.button}>
           X
         </button>
       </div>
