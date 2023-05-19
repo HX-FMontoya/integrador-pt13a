@@ -4,6 +4,7 @@ export default function Cards({ characters, onClose }) {
   // props -> { characters} undefined
   return (
     <div className={styled.container}>
+      <h1>Cards</h1>
       {characters?.map(
         ({id, name, species, status, gender, origin, image }) => (
           <Card
