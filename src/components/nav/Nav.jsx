@@ -7,6 +7,7 @@ const Nav = ({onSearch}) => {
       <div className={styled.container}>
         <Link to="/about">About</Link>
         <Link to="/home">Home</Link>
+        <Link to="/favorites">Favorites</Link>
         <SearchBar onSearch={onSearch} />
       </div>
     );

@@ -1,10 +1,10 @@
 import Card from "../card/Card";
 import styled from "./Cards.module.css"
-export default function Cards({ characters, onClose }) {
+export default function Cards(props) {
   // props -> { characters} undefined
   return (
     <div className={styled.container}>
-      {characters?.map(
+      {props.characters?.map(
         ({id, name, species, status, gender, origin, image }) => (
           <Card
             key={id}
@@ -15,7 +15,7 @@ export default function Cards({ characters, onClose }) {
             gender={gender}
             origin={origin.name}
             image={image}
-            onClose={onClose}
+            onClose={props.onClose}
           />
         )
       )}

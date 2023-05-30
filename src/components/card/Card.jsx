@@ -18,15 +18,18 @@ function Card({
   const [isFav, setIsFav] = useState(false)
 
   useEffect(() => {
+    console.log(myFavorites)
     myFavorites.forEach((fav) => {
+      console.log(fav.id, id)
        if (fav.id === id) {
+        console.log("si")
           setIsFav(true);
        }
     });
- }, [myFavorites]);
+ }, [myFavorites, id]);
 
   const handleFavorite = () => {
-    isFav ? removeFav(id) : addFav({name,
+    isFav ? removeFav(id) : addFav({id, name,
       species,
       status,
       gender,
@@ -37,20 +40,23 @@ function Card({
   return (
     
     <div className={styled.container}>
-      <div className={styled.buttonContainer}>
-      {
-        isFav ? (
-            <button onClick={handleFavorite}>❤️</button>
-        ) : (
-            <button onClick={handleFavorite}>🤍</button>
-        )
-      }
+      <div style={{display: "flex", justifyContent: "space-between"}}>
+        <div className={styled.buttonContainer}>
+        {
+          isFav ? (
+              <button onClick={handleFavorite}>❤️</button>
+          ) : (
+              <button onClick={handleFavorite}>🤍</button>
+          )
+        }
+        </div>
+        <div className={styled.buttonContainer}>
+          <button onClick={() => onClose(id)} className={styled.button}>
+            X
+          </button>
+        </div>
       </div>
-      <div className={styled.buttonContainer}>
-        <button onClick={() => onClose(id)} className={styled.button}>
-          X
-        </button>
-      </div>
+      
       <Link to={`/detail/${id}`}>
       <div>
       <h2 className={styled.props}>Nombre: {name}</h2>
