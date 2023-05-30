@@ -1,6 +1,7 @@
 import "./App.css";
 import Cards from "./components/cards/Cards";
 import Nav from "./components/nav/Nav";
+import Favorites from "./components/favorites/Favorites";
 import { useState } from "react";
 import axios from "axios";
 const URL = "https://rickandmortyapi.com/api/character";
@@ -30,6 +31,9 @@ function App() {
     <div className="App">
       <Nav onSearch={onSearch} />
       <Cards characters={characters} onClose={onClose}/>
+      <h1>FAVORITOS</h1>
+      <Favorites/>
+      {/* <Route path="/favorites" element={<Favorites/>}/> */}
     </div>
   );
 }
