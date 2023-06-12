@@ -33,7 +33,7 @@ function App() {
         }
       })
       .catch((error) => {
-        window.alert("Ese id no existe");
+        window.alert(error.message);
       });
   };
   const onClose = (id) => {
