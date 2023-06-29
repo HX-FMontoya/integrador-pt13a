@@ -13,12 +13,10 @@ const getCharById = async (req, res) => {
     const { data } = await axios(`${URL}/${id}`);
     const { status, name, species, origin, image, gender, error } = data;
     const character = { id, status, name, species, origin, image, gender };
-    console.log(character);
     return name
       ? res.json(character)
       : res.status(404).json({ message: error });
   } catch (reason) {
-    console.log(reason);
     return res.status(500).json({ message: reason });
   }
 };
